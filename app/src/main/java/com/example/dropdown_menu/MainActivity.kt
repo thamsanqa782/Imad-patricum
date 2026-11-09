@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -27,7 +28,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -39,9 +42,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             DropdownmenuTheme {
 //                create an instance of the view model
-//                val model = ViewModel
+                val model: Model by viewModels()
 //                creating navigation buttons that will stick at the bottom for all screens
-                var navController = rememberNavController()
+                val navController = rememberNavController()
 
                 Scaffold(bottomBar = {
                     Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp)) {
@@ -53,9 +56,11 @@ class MainActivity : ComponentActivity() {
 
 
                    NavHost(navController = navController , startDestination = "home") {
-                       composable("home") {  Menu(modifier = Modifier.padding(innerPadding)) }
-                       composable("ViewScreen") {  ViewScreen(modifier = Modifier.padding(innerPadding)) }
-                       composable("CalculationsScreen") {  CalculationsScreen(modifier = Modifier.padding(innerPadding)) }
+                       composable("home") {  Menu( model,
+                           modifier = Modifier.padding(innerPadding))
+                       }
+                       composable("ViewScreen") {  ViewScreen(model,modifier = Modifier.padding(innerPadding)) }
+                       composable("CalculationsScreen") {  CalculationsScreen(model,modifier = Modifier.padding(innerPadding)) }
                    }
 
                 }
@@ -65,13 +70,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Menu( modifier: Modifier = Modifier) {
+fun Menu(model: Model , modifier: Modifier = Modifier) {
 
 
    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier.fillMaxSize().background(
        MaterialTheme.colorScheme.primary)){
 
-
+    Text("this is the main page ${model.year}", fontSize = 70.sp)
 
    }
 }
