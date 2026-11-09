@@ -20,7 +20,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -76,8 +78,16 @@ fun Menu(model: Model , modifier: Modifier = Modifier) {
    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier.fillMaxSize().background(
        MaterialTheme.colorScheme.primary)){
 
-    Text("this is the main page ${model.year}", fontSize = 70.sp)
+       ElevatedCard(modifier = Modifier.fillMaxSize()
+           .padding(50.dp)){
 
+            Row(modifier = Modifier.fillMaxWidth()
+                .padding(horizontal = 20.dp)) {
+
+
+
+            }
+       }
    }
 }
 
