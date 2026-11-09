@@ -29,6 +29,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,20 +41,22 @@ class MainActivity : ComponentActivity() {
 //                create an instance of the view model
 //                val model = ViewModel
 //                creating navigation buttons that will stick at the bottom for all screens
-//                var navController =
+                var navController = rememberNavController()
 
                 Scaffold(bottomBar = {
                     Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp)) {
-                        Button({}) { Text("home") }
-                        Button({}) { Text("details") }
-                        Button({}) { Text("calculator") }
+                        Button({navController.navigate("home")}) { Text("home") }
+                        Button({navController.navigate("ViewScreen")}) { Text("details") }
+                        Button({navController.navigate("CalculationsScreen")}) { Text("calculator") }
                     }
                 },modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Menu(modifier = Modifier.padding(innerPadding))
 
-//                    NavHost(){
-//
-//                    }
+
+                   NavHost(navController = navController , startDestination = "home") {
+                       composable("home") {  Menu(modifier = Modifier.padding(innerPadding)) }
+                       composable("ViewScreen") {  ViewScreen(modifier = Modifier.padding(innerPadding)) }
+                       composable("CalculationsScreen") {  CalculationsScreen(modifier = Modifier.padding(innerPadding)) }
+                   }
 
                 }
             }
@@ -65,7 +69,7 @@ fun Menu( modifier: Modifier = Modifier) {
 
 
    Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier.fillMaxSize().background(
-       MaterialTheme.colorScheme.background)){
+       MaterialTheme.colorScheme.primary)){
 
 
 

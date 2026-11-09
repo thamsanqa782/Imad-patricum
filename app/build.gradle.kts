@@ -57,5 +57,5 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-navigation3-android:2.11.0")
     implementation("androidx.navigation:navigation-compose-android:2.10.2")
-
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.11.0")
 }
