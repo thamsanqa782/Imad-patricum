@@ -9,3 +9,9 @@ on this man screen there is a navigation with multiple buttons each butons refer
 screen second button second screen that is where you will be able to view all your past budget amounts and on the last screen is 
 where calculations are doen calculatng what was speant daily vs what was allocated for that day and doing an overall calculation of the
 entire week this is the anayitics page
+
+
+<img width="720" height="1650" alt="Screenshot_20261109-160250" src="https://github.com/user-attachments/assets/0aa7d480-2b34-4387-abb3-8356faf93d9a" />
+<img width="720" height="1650" alt="Screenshot_20261109-160254" src="https://github.com/user-attachments/assets/71979f5c-c477-4850-8eee-54e24a15a700" />
+<img width="720" height="1650" alt="Screenshot_20261109-160259" src="https://github.com/user-attachments/assets/a63ffe03-4feb-4000-9932-bbffbe890cee" />
+<img width="720" height="1650" alt="Screenshot_20261109-160243" src="https://github.com/user-attachments/assets/62de3219-5149-4033-8376-1438021dee29" />
